@@ -9,6 +9,10 @@ html, body {
     font-size: 17px;
 }
 
+a {
+    color: rgb(238, 84, 84);
+}
+
 .header-desktop {
     list-style-type: none;
     margin: 0;
@@ -89,6 +93,7 @@ h1,h2,h3,h4,h5,h6,p {
     from {color:black}
     to {color:white}
 }
+
 
 .download-button {
     padding: 16px 8px;
