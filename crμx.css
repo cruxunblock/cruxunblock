@@ -98,6 +98,17 @@ h1,h2,h3,h4,h5,h6,p {
     margin: 5px;
 }
 
+.regular-button {
+    padding: 16px 8px;
+    background: red;
+    color: white;
+    text-decoration: none;
+    margin: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer
+}
+
 .header-dropdown {
     position: relative;
     display: inline-block

@@ -57,26 +57,28 @@
         </div>
         <div class='title-label'>
             <h1>Securly Block Detector</h1>
-            <p>
-                Your Email Address <input type="email" id="sbdemail" /><br>
-                URL <input type="url" value="https://www.example.com/" id="sdburl" />
-            </p>
-            <p id="sdbstat"></p>
-            <p id="sdbcat"></p>
-            <script>
-                async function Ok() {
-                    var stat = document.getElementById('sdbstat');
-                    var cat = document.getElementById('sdbcat');
-                    stat.innerText = 'Fetching details...';
-                    cat.innerText = '';
-                    var data = await SecurlyBlockedDetector(
-                        document.getElementById('sdbemail').value,
-                        document.getElementById('sdburl').value
-                    );
-                    stat.innerText = data.userFriendly.reason;
-                    cat.innerText = data.userFriendly.categories||"";
-                }
-            </script>
+            <p>See when a website's blocked. Prevent Securly's cookie-remover from causing data loss.</p>
         </div>
+        <p>
+            Your Email Address <input type="email" id="sbdemail" /><br>
+            URL <input type="url" value="https://www.example.com/" id="sdburl" /><br>
+            <button class="regular-button" onclick="Ok()">Test Website</button>
+        </p>
+        <p id="sdbstat"></p>
+        <p id="sdbcat"></p>
+        <script>
+            async function Ok() {
+                var stat = document.getElementById('sdbstat');
+                var cat = document.getElementById('sdbcat');
+                stat.innerText = 'Fetching details...';
+                cat.innerText = '';
+                var data = await SecurlyBlockedDetector(
+                    document.getElementById('sdbemail').value,
+                    document.getElementById('sdburl').value
+                );
+                stat.innerText = data.userFriendly.reason;
+                cat.innerText = data.userFriendly.categories||"";
+            }
+        </script>
     </body>
 </html>
