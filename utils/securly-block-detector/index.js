@@ -27,7 +27,7 @@ var SecurlyBlockedDetector = async function (email, url) {
         'health',
         'educational youtube'
     ];
-    if(blockOrDeny === 'ALLOW') {
+    if(blockOrDeny === '\nALLOW') {
         return {
             status: 'allow',
             category: null,
