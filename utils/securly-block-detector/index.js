@@ -54,8 +54,12 @@ var SecurlyBlockedDetector = async function (email, url) {
             }
         } else {
             var CatMapRes = [];
-            var binaryData = Number(categories).toString(2);
+            var obinaryData = Number(categories).toString(2);
             var xM = 1;
+            var binaryData = "";
+            for(var x1 = obinaryData.length-1; x1 > -1; x1--) {
+                binaryData += obinaryData[x1];
+            }
             for(var xx = 0; xx < binaryData.length; xx++) {
                 if(binaryData[xx] == '1') {
                     if(CatMapRes[xM]) {
