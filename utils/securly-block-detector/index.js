@@ -58,7 +58,9 @@ var SecurlyBlockedDetector = async function (email, url) {
             var xM = 1;
             for(var xx = 0; xx < binaryData.length; xx++) {
                 if(binaryData[xx] == '1') {
-                    CatMapRes.push(CATLIST[xM])
+                    if(CatMapRes[xM]) {
+                        CatMapRes.push(CATLIST[xM])
+                    }
                 }
                 xM *= 2
             }
