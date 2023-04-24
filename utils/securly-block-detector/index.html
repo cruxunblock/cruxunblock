@@ -61,20 +61,20 @@
         </div>
         <p>
             Your Email Address <input type="email" id="sbdemail" /><br>
-            URL <input type="url" value="https://www.example.com/" id="sdburl" /><br>
-            <button class="regular-button" onclick="Ok()">Test Website</button>
+            URL <input type="url" value="https://www.example.com/" id="sbdurl" /><br>
+            <button class="regular-button" onclick="RunSecurlyTest()">Test Website</button>
         </p>
-        <p id="sdbstat"></p>
-        <p id="sdbcat"></p>
+        <p id="sbdstat"></p>
+        <p id="sbdcat"></p>
         <script>
-            async function Ok() {
-                var stat = document.getElementById('sdbstat');
-                var cat = document.getElementById('sdbcat');
+            async function RunSecurlyTest() {
+                var stat = document.getElementById('sbdstat');
+                var cat = document.getElementById('sbdcat');
                 stat.innerText = 'Fetching details...';
                 cat.innerText = '';
                 var data = await SecurlyBlockedDetector(
-                    document.getElementById('sdbemail').value,
-                    document.getElementById('sdburl').value
+                    document.getElementById('sbdemail').value,
+                    document.getElementById('sbdurl').value
                 );
                 stat.innerText = data.userFriendly.reason;
                 cat.innerText = data.userFriendly.categories||"";
